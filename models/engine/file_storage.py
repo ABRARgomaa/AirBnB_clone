@@ -12,13 +12,14 @@ from models.review import Review
 from models.state import State
 from models.user import User
 
+
 class FileStorage:
     """File Storage"""
     __file_path = "file.json"
     __objects = {}
     clss = {"BaseModel": BaseModel, "User": User, "Place": Place,
-             "Amenity": Amenity, "City": City, "Review": Review,
-             "State": State}
+            "Amenity": Amenity, "City": City, "Review": Review,
+            "State": State}
 
     def all(self):
         """Return objects."""

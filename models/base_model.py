@@ -5,14 +5,16 @@ from datetime import datetime
 
 class BaseModel:
     """BaseModel class"""
+
     def __init__(self, *args, **kwargs):
         """Initialize a new instance"""
         from models import storage
         if kwargs:
             for key, value in kwargs.items():
-                if key != '__class__':
-                    if key in ['created_at', 'updated_at'] and isinstance(value, str):
-                        value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
+                date_form = "%Y-%m-%dT%H:%M:%S.%f"
+                if key == 'created_at' or key == 'updated_at':
+                    setattr(self, key, datetime.strptime(value, date_form))
+                elif key != '__class__':
                     setattr(self, key, value)
             if 'id' not in kwargs:
                 self.id = str(uuid.uuid4())
