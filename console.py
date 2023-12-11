@@ -181,7 +181,8 @@ class HBNBCommand(cmd.Cmd):
             o = ser_obj["{}.{}".format(a[0], a[1])]
             for kk, vv in eval(a[2]).items():
                 if (kk in o.__class__.__dict__.keys() and
-                            type(o.__class__.__dict__[kk]) in {str, int, float}):
+                        type(o.__class__.__dict__[kk])
+                        in {str, int, float}):
                     v = type(o.__class__.__dict__[kk])
                     o.__dict__[kk] = v(vv)
                 else:
