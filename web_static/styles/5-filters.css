@@ -1,0 +1,27 @@
+.filters.locations, .filters.amenities {
+    height: 70px;
+    width: 25%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    top: 0;
+    bottom: 0;
+    flex: 1;
+}
+.locations {
+    border-right: 1px solid  #DDDDDD ;
+}
+.filters .locations h3,  .filters .amenities h3 {
+    font-weight: 600;
+    margin: 2px 20px;
+    color:rgb(95, 94, 94);
+}
+.locations h4,  .amenities h4 {
+    font-weight: 400;
+    font-size: 14px;
+    margin: 2px 20px;
+    color:rgb(95, 94, 94);
+}
